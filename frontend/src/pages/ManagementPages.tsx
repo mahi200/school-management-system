@@ -955,6 +955,7 @@ export function DocumentsPage({ onToast }: { onToast?: (msg: string, type?: 'suc
             <input
               id="document-file-input"
               type="file"
+              accept="image/*,.pdf"
               onChange={(event) => setFile(event.target.files?.[0] ?? null)}
               className="mt-2 w-full rounded-md border border-black/15 px-3 py-2 text-sm outline-none focus:border-cedar dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100"
             />
