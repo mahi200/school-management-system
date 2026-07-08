@@ -1,0 +1,10 @@
+ALTER TABLE management_students
+    ADD COLUMN guardian_phone VARCHAR(40) NOT NULL DEFAULT '',
+    ADD COLUMN guardian_email VARCHAR(160) NOT NULL DEFAULT '',
+    ADD COLUMN date_of_birth VARCHAR(20) NOT NULL DEFAULT '',
+    ADD COLUMN gender VARCHAR(20) NOT NULL DEFAULT 'Male';
+
+ALTER TABLE management_teachers
+    ADD COLUMN email VARCHAR(160) NOT NULL DEFAULT '',
+    ADD COLUMN qualification VARCHAR(160) NOT NULL DEFAULT '',
+    ADD COLUMN joining_date VARCHAR(20) NOT NULL DEFAULT '';

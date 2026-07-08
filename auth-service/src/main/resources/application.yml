@@ -1,0 +1,41 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: auth-service
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/school}
+    username: ${SPRING_DATASOURCE_USERNAME:school}
+    password: ${SPRING_DATASOURCE_PASSWORD:school}
+  flyway:
+    enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          time_zone: UTC
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+
+app:
+  jwt:
+    issuer: school-management-system
+    secret: ${JWT_SECRET:local-dev-secret-key-change-me-please-keep-32-bytes-min}
+    access-token-minutes: ${JWT_ACCESS_TOKEN_MINUTES:60}
+  rate-limit:
+    requests-per-minute: ${RATE_LIMIT_REQUESTS_PER_MINUTE:120}
+
+logging:
+  level:
+    com.school.auth: INFO
+    org.springframework.security: INFO
+

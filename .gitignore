@@ -1,0 +1,11 @@
+.DS_Store
+target/
+build/
+dist/
+node_modules/
+.m2/
+.env
+.idea/
+.vscode/
+*.log
+*.tsbuildinfo
